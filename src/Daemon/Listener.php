@@ -46,7 +46,7 @@ class Listener extends QueueListener{
      *
      * @return bool
      */
-    public function setSignalHandler(int $signal, callable $closure = null){
+    public function setSignalHandler(int $signal, ?callable $closure = null){
         if (empty($closure)){
             return pcntl_signal($signal, array($this, 'sigHandler'));
         }
